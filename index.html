@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LifeSetu – Life Admin Made Easy</title>
+  <style>
+    body { font-family: Arial; background:#f5f5f5; }
+    .box { width:400px; margin:40px auto; background:white; padding:20px; border-radius:8px; }
+    h2 { text-align:center; }
+    input, select, textarea, button {
+      width:100%; margin-top:10px; padding:10px;
+    }
+    button { background:#007bff; color:white; border:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>LifeSetu</h2>
+  <p>We handle your paperwork for you</p>
+
+  <form action="/submit" method="post">
+    <input name="name" placeholder="Your Name" required>
+    <input name="phone" placeholder="Phone Number" required>
+
+    <select name="service">
+      <option>PAN Correction</option>
+      <option>Aadhaar Update</option>
+      <option>Passport Help</option>
+      <option>Scholarship Form</option>
+    </select>
+
+    <textarea name="details" placeholder="Describe your problem"></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</div>
+
+</body>
+</html>
