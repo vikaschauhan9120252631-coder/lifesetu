@@ -3,6 +3,7 @@
 <head>
   <title>LifeSetu – Life Admin Made Easy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +14,7 @@
 
     .container {
       max-width: 420px;
-      margin: 60px auto;
+      margin: 40px auto;
       background: white;
       padding: 30px;
       border-radius: 12px;
@@ -62,18 +63,6 @@
       background: #1e4ed8;
     }
 
-    .trust {
-      margin-top: 25px;
-      font-size: 13px;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .trust span {
-      display: block;
-      margin-bottom: 6px;
-    }
-
     .pricing {
       margin-top: 25px;
       padding: 15px;
@@ -82,23 +71,93 @@
       font-size: 14px;
     }
 
-    .pricing h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 15px;
-      color: #222;
+    .trust {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #555;
     }
 
     footer {
       text-align: center;
-      margin-top: 30px;
+      margin: 30px 0;
       font-size: 12px;
       color: #777;
     }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .step {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .step-number {
+      background: #2563eb;
+      color: white;
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: bold;
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 12px;
+      background: #f9fafb;
+      border-left: 4px solid #2563eb;
+      font-size: 13px;
+    }
+
+    /* Language buttons */
+    .lang-switch {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .lang-switch button {
+      width: auto;
+      padding: 8px 16px;
+      margin: 0 5px;
+      font-size: 14px;
+    }
+
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      font-size: 28px;
+      padding: 14px 16px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
   </style>
 </head>
+
 <body>
 
+<!-- 🌐 LANGUAGE SWITCH -->
+<div class="lang-switch">
+  <button onclick="showEnglish()">English</button>
+  <button onclick="showHindi()">हिंदी</button>
+</div>
+
+<!-- MAIN FORM -->
 <div class="container">
   <h1>LifeSetu</h1>
   <div class="tagline">We handle your paperwork for you</div>
@@ -116,61 +175,70 @@
     </select>
 
     <textarea name="details" placeholder="Describe your problem (optional)"></textarea>
-
     <button type="submit">Submit Request</button>
   </form>
 
-  <!-- 💰 PRICING SECTION -->
   <div class="pricing">
-    <h3>💰 Transparent Pricing</h3>
-    <div>📝 PAN Correction – ₹199</div>
-    <div>🆔 Aadhaar Update – ₹249</div>
-    <div>🛂 Passport Help – ₹499</div>
-    <div>🎓 Scholarship Form – ₹149</div>
-    <div>📄 Insurance Claim – ₹599</div>
+    <b>Transparent Pricing</b><br>
+    PAN Correction – ₹199<br>
+    Aadhaar Update – ₹249<br>
+    Passport Help – ₹499
   </div>
 
-  <!-- ✅ TRUST POINTS -->
   <div class="trust">
-    <span>✅ No agents, no confusion</span>
-    <span>✅ Real humans handle your work</span>
-    <span>✅ Clear pricing before payment</span>
-    <span>✅ WhatsApp updates (coming soon)</span>
+    ✅ No agents • ✅ Phone only • ✅ WhatsApp support
+  </div>
+</div>
+
+<!-- 🔄 HOW IT WORKS – ENGLISH -->
+<div id="english-section" class="how-it-works">
+  <h2>How LifeSetu Works</h2>
+
+  <div class="step"><div class="step-number">1</div>Select your work</div>
+  <div class="step"><div class="step-number">2</div>Choose self or assisted mode</div>
+  <div class="step"><div class="step-number">3</div>Follow simple phone steps</div>
+  <div class="step"><div class="step-number">4</div>Get clear confirmation</div>
+  <div class="step"><div class="step-number">5</div>Track everything</div>
+  <div class="step"><div class="step-number">6</div>Get WhatsApp help</div>
+
+  <div class="note">
+    LifeSetu is not a government website. We only assist users.
+  </div>
+</div>
+
+<!-- 🔄 HOW IT WORKS – HINDI -->
+<div id="hindi-section" class="how-it-works" style="display:none;">
+  <h2>LifeSetu कैसे काम करता है</h2>
+
+  <div class="step"><div class="step-number">1</div>काम चुनें</div>
+  <div class="step"><div class="step-number">2</div>खुद करें या मदद लें</div>
+  <div class="step"><div class="step-number">3</div>फोन से आसान स्टेप्स</div>
+  <div class="step"><div class="step-number">4</div>साफ़ पुष्टि</div>
+  <div class="step"><div class="step-number">5</div>सब कुछ ट्रैक करें</div>
+  <div class="step"><div class="step-number">6</div>WhatsApp मदद</div>
+
+  <div class="note">
+    LifeSetu कोई सरकारी वेबसाइट नहीं है।
   </div>
 </div>
 
 <footer>
-  © 2026 LifeSetu • Life Admin Made Easy
+  © 2026 LifeSetu
 </footer>
-<!-- 📲 WhatsApp Floating Button -->
-<!-- 📲 WhatsApp Floating Button -->
-<a
-  href="https://wa.me/919918549863?text=Hi%20LifeSetu,%20I%20need%20help%20with%20paperwork"
-  class="whatsapp-float"
-  target="_blank"
->
-  💬
-</a>
 
+<!-- WhatsApp -->
+<a href="https://wa.me/919918549863" class="whatsapp-float" target="_blank">💬</a>
 
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  font-size: 28px;
-  padding: 14px 16px;
-  border-radius: 50%;
-  text-decoration: none;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  z-index: 999;
+<script>
+function showEnglish() {
+  document.getElementById("english-section").style.display = "block";
+  document.getElementById("hindi-section").style.display = "none";
 }
-.whatsapp-float:hover {
-  background: #1ebe5d;
+function showHindi() {
+  document.getElementById("english-section").style.display = "none";
+  document.getElementById("hindi-section").style.display = "block";
 }
-</style>
+</script>
 
 </body>
 </html>
